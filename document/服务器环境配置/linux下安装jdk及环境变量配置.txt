@@ -1,0 +1,26 @@
+Linux 下jdk配置
+
+	1。安装前的清理工作
+		rpm -qa | grep jdk
+		rpm -qa | grep gcj
+		yum -y remove java-xxx-xxx
+	2.在线下载jdk1.8
+		wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+	3.添加执行权限
+		chmod +x jdk-8u131-linux-x64.rpm
+	4.执行rpm进行安装
+		rpm -ivh jdk-8u131-linux-x64.rpm
+	5.查看JDK是否安装成功及安装版本
+		java -version
+		一般直接执行后默认安装路径 /usr/java/jdk1.8.0_131
+	6.配置JDK环境变量
+		编辑 vim /etc/profile
+
+		添加
+			export JAVA_HOME=/usr/java/jdk1.8.0_131
+ 			export JRE_HOME=${JAVA_HOME}/jre
+ 			export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib:$CLASSPATH
+ 			export JAVA_PATH=${JAVA_HOME}/bin:${JRE_HOME}/bin
+ 			export PATH=$PATH:${JAVA_PATH}
+	7.立即生效
+		source /etc/profile
