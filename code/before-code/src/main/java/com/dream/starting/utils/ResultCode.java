@@ -1,4 +1,4 @@
-package com.atguigu.commonutils;
+package com.dream.starting.utils;
 
 public interface ResultCode {
 
