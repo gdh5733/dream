@@ -3,6 +3,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 返回信息封装
+ */
 public class R {
 
     @ApiModelProperty(value = "是否成功")

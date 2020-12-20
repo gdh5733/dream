@@ -1,5 +1,6 @@
 package com.dream.starting.controller;
 import com.dream.starting.utils.R;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,8 @@ import java.util.List;
  * @author gaodehan
  * @date 2020/06/23
  */
+
+@Api(description = "测试返回结果集")
 @RestController
 @RequestMapping("/test/result")
 public class ResultTest {
